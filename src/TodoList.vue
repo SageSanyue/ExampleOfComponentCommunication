@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Todo-list</h1>
+    <h1>{{title}}</h1>
     <input v-model="inputValue" type="text">
     <button @click="handleSubmit">提交</button>
     <todo-item 
@@ -27,6 +27,7 @@ export default {
   },
   data() {
     return {
+      title: 'Todo-list',
       inputValue: '',
       list: []
     }
