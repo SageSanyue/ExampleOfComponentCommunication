@@ -3,7 +3,8 @@
     <h1>{{title}}</h1>
     <input v-model="inputValue" type="text">
     <button @click="handleSubmit">提交</button>
-    <todo-item 
+    <todo-item
+      ref="childrenItems"
       v-for="(item, index) of list" 
       :key="index"
       :content="item"
@@ -14,23 +15,30 @@
     <div>
       <button @click="handleChild">点我可以获取item第2条的值</button>
     </div>
+    <advertise></advertise>
   </div>
 </template>
 
 <script>
 import TodoItem from './components/TodoItem.vue'
+import Advertise from './components/advertise.vue'
 
 export default {
   name: 'TodoList',
-  components: {
-    'todo-item': TodoItem
-  },
   data() {
     return {
       title: 'Todo-list',
       inputValue: '',
       list: []
     }
+  },
+  updated() {
+    var childrenItems = this.$refs.childrenItems
+    console.log(childrenItems)
+  },
+  components: {
+    'todo-item': TodoItem,
+    'advertise': Advertise
   },
   methods: {
     handleChild() {
