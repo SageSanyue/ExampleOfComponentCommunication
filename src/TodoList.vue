@@ -11,6 +11,9 @@
       @delete="handleDelete"
     >
     </todo-item>
+    <div>
+      <button @click="handleChild">点我可以获取item第2条的值</button>
+    </div>
   </div>
 </template>
 
@@ -29,6 +32,10 @@ export default {
     }
   },
   methods: {
+    handleChild() {
+      // 获取子组件todo-item指定某项的值
+      console.log(this.$children[1].realIndex)
+    },
     handleSubmit() {
       this.list.push(this.inputValue)
       this.inputValue = ''
