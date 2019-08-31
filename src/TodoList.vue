@@ -16,7 +16,18 @@
       <button @click="handleChild">点我可以获取item第2条的值</button>
     </div>
     <advertise>
-      <span style="color:blue;">猜猜我啥颜色</span>
+      <template v-slot:header>
+        <h1>我是name叫做header那里要展示哒</h1>
+      </template>
+
+      <p>我是默认名字(其实就是木有)处要展示哒</p>
+
+      <template v-slot:haha>
+         <p>我是name叫做haha那里要展示哒</p>
+      </template>
+
+      <span style="color:blue;">猜猜我放哪里？</span>
+
     </advertise>
   </div>
 </template>
