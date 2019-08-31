@@ -15,7 +15,9 @@
     <div>
       <button @click="handleChild">点我可以获取item第2条的值</button>
     </div>
-    <advertise></advertise>
+    <advertise>
+      <span style="color:blue;">猜猜我啥颜色</span>
+    </advertise>
   </div>
 </template>
 

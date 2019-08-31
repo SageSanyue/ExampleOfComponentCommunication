@@ -1,7 +1,10 @@
 <template>
 <div class="footer">
+  <slot></slot>
   <p>广告位长期招租哦😯</p>
+  <slot  style=”color:yellow;” >这是在slot上添加了样式</slot>
   <p>{{contact}}</p>
+  <slot  name=”mySlot”>这是拥有命名的slot的默认内容</slot>
   <join-kind></join-kind>
 </div>
 </template>
