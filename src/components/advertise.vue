@@ -2,6 +2,9 @@
 <div class="footer">
   <slot name="header"></slot>
 
+  <slot name="someNew" v-bind:person="maneger"></slot>
+  <!-- <slot name="someNew" :person="maneger"></slot> -->
+
   <slot></slot>
 
   <p>广告位长期招租哦😯</p>
@@ -22,7 +25,8 @@ export default {
   },
   data() {
       return {
-          contact: '800-***-8820'
+          contact: '800-***-8820',
+          maneger: 'Tom' // 这个子组件作用域内特有的数据
       }
   },
   methods: {

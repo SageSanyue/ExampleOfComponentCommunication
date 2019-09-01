@@ -16,6 +16,10 @@
       <button @click="handleChild">点我可以获取item第2条的值</button>
     </div>
     <advertise>
+      <template v-slot:someNew="childProps">
+        <i style="color:red;">{{childProps.person}}</i>
+      </template>
+
       <template v-slot:header>
         <h1>我是name叫做header那里要展示哒</h1>
       </template>
