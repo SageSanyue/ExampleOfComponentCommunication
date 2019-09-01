@@ -3,7 +3,11 @@
 
   <p>广告位长期招租哦😯</p>
   <p>{{contact}}</p>
-  <join-kind v-bind="$attrs"></join-kind>
+  <join-kind 
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
+  </join-kind>
 
 </div>
 </template>

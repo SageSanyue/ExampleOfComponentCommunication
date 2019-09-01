@@ -29,6 +29,7 @@ export default {
   },
   created() {
     console.log('孙组件$attrs', this.$attrs)
+    this.$listeners.two()
   },
   methods: {
   }

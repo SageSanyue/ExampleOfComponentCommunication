@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     triggerTwo () {
-      alert('two')
+      console.log('two')
     },
     handleChild() {
       // 获取子组件todo-item指定某项的值
