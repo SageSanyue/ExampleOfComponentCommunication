@@ -10,14 +10,12 @@
         >
         </option>
     </select>
-    <span style="color:yellowgreen;">{{grandPa}}</span>
 </div>
 </template>
 
 <script>
 export default {
   name: 'joinKind',
-  inject: ['grandPa'],
   data() {
       return {
           chooseType: [
@@ -28,6 +26,9 @@ export default {
           ],
           chooseValue: ''
       }
+  },
+  created() {
+    console.log('孙组件$attrs', this.$attrs)
   },
   methods: {
   }

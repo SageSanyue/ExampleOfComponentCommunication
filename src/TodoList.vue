@@ -15,7 +15,13 @@
     <div>
       <button @click="handleChild">点我可以获取item第2条的值</button>
     </div>
-    <advertise>
+    <advertise
+      :title="title"
+      :a="a"
+      :b="b"
+      :c="c"
+      @two="triggerTwo"
+    >
     </advertise>
   </div>
 </template>
@@ -26,25 +32,20 @@ import Advertise from './components/advertise.vue'
 
 export default {
   name: 'TodoList',
-  provide: {
-    grandPa: "我是祖父哦😯"
-  },
   data() {
     return {
       title: 'Todo-list',
       inputValue: '',
-      list: []
+      list: [],
+      a: 'aa',
+      b: 'bb',
+      c: 'cc'
     }
   },
-  updated() {
-    var childrenItems = this.$refs.childrenItems
-    console.log(childrenItems)
-  },
-  components: {
-    'todo-item': TodoItem,
-    'advertise': Advertise
-  },
   methods: {
+    triggerTwo () {
+      alert('two')
+    },
     handleChild() {
       // 获取子组件todo-item指定某项的值
       console.log(this.$children[1].realIndex)
@@ -56,6 +57,14 @@ export default {
     handleDelete(index) {
       this.list.splice(index, 1)
     }
+  },
+  updated() {
+    var childrenItems = this.$refs.childrenItems
+    console.log(childrenItems)
+  },
+  components: {
+    'todo-item': TodoItem,
+    'advertise': Advertise
   }
 }
 </script>

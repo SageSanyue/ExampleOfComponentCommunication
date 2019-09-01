@@ -22,6 +22,12 @@ export default {
           maneger: 'Tom' // 这个子组件作用域内特有的数据
       }
   },
+  props: { a: String }, // a作为props 属性绑定 
+  inheritAttrs: false,
+  created() {
+    console.log('子组件$attrs', this.$attrs)
+    console.log('子组件$listeners', this.$listeners)
+  },
   methods: {
   }
 }
