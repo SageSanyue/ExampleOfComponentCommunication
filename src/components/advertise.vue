@@ -1,17 +1,10 @@
 <template>
 <div class="footer">
-  <slot name="header"></slot>
-
-  <slot name="someNew" v-bind:person="maneger"></slot>
-  <!-- <slot name="someNew" :person="maneger"></slot> -->
-
-  <slot></slot>
 
   <p>广告位长期招租哦😯</p>
   <p>{{contact}}</p>
   <join-kind></join-kind>
 
-  <slot name="haha"></slot>
 </div>
 </template>
 
