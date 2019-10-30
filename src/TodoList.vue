@@ -15,6 +15,12 @@
     <div>
       <button @click="handleChild">点我可以获取item第2条的值</button>
     </div>
+
+    <div class="event-bus-ex">
+      <show-num-com></show-num-com>
+      <addition-num-com></addition-num-com>
+    </div>
+
     <advertise
       :title="title"
       :a="a"
@@ -29,9 +35,17 @@
 <script>
 import TodoItem from './components/TodoItem.vue'
 import Advertise from './components/advertise.vue'
+import showNumCom from './components/showNum.vue'
+import additionNumCom from './components/additionNum.vue'
 
 export default {
   name: 'TodoList',
+  components: {
+    'todo-item': TodoItem,
+    'advertise': Advertise,
+    'show-num-com': showNumCom, 
+    'addition-num-com': additionNumCom
+  },
   data() {
     return {
       title: 'Todo-list',
@@ -61,10 +75,6 @@ export default {
   updated() {
     var childrenItems = this.$refs.childrenItems
     console.log(childrenItems)
-  },
-  components: {
-    'todo-item': TodoItem,
-    'advertise': Advertise
   }
 }
 </script>
@@ -77,5 +87,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.event-bus-ex {
+  position: absolute;
+  top: 50%;
+  left: 74%
 }
 </style>
